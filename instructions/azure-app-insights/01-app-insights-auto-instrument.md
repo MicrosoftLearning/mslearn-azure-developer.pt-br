@@ -157,6 +157,7 @@ Explore outras opções de relatório para ter uma ideia de quais outros tipos d
 
 Agora que você concluiu o exercício, exclua os recursos de nuvem que criou para evitar uso desnecessário de recursos.
 
+1. No navegador, vá par o portal do Azure [https://portal.azure.com](https://portal.azure.com). Faça login com suas credenciais do Azure se for solicitado.
 1. Navegue até o grupo de recursos que você criou e exiba o conteúdo dos recursos usados neste exercício.
 1. Na barra de ferramentas, selecione **Excluir grupo de recursos**.
 1. Insira o nome do grupo de recursos e confirme que deseja excluí-lo.
