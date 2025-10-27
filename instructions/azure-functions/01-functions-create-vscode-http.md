@@ -63,6 +63,8 @@ Nesta seção, você usará o Visual Studio Code para criar um projeto local do 
 
     <sup>1</sup> Dependendo das suas configurações de VS Code, talvez seja necessário usar a opção **Alterar filltro dos modelos** para ver a lista completa de modelos.
 
+1. Quando solicitado a *Selecionar como você gostaria de abrir seu projeto*, selecione **Abrir na janela atual**.
+
 1. O Visual Studio Code usa as informações fornecidas e gera um projeto do Azure Functions com um gatilho HTTP. Você pode exibir os arquivos de projeto locais no Explorer.
 
     > **Observação**: Se o VS Code exibir um pop-up com o título **Você confia nos autores dos arquivos nesta pasta?**, selecione o botão **Sim, confio nos autores**.
@@ -73,7 +75,11 @@ O Visual Studio Code integra-se ao Azure Functions Core Tools para permitir que 
 
 1. Verifique se o terminal está aberto no Visual Studio Code. É possível abrir o terminal selecionando **Terminal** e, em seguida, **Novo terminal** na barra de menus. 
 
-1. Pressione **F5** para iniciar o projeto do aplicativo de funções no depurador. A saída do Core Tools é exibida no painel **Terminal**. Seu aplicativo é iniciado no painel **Terminal**. Você pode ver o ponto de extremidade de URL de sua função disparada por HTTP localmente.
+1. Pressione **F5** para iniciar o projeto do aplicativo de funções no depurador. Se for solicitado a escolher uma conta de armazenamento, selecione **Ignorar por enquanto**.
+
+    ![Captura de tela da caixa de diálogo solicitando a criação da conta de armazenamento.](./media/01/select-storage-acct.png)
+
+1. A saída do Core Tools é exibida no painel **Terminal**. Você pode ver o ponto de extremidade de URL de sua função disparada por HTTP localmente.
 
     ![Uma captura de tela do ponto de extremidade da sua função disparada por HTTP é exibida no painel Terminal.](./media/01/run-function-local.png)
 
@@ -81,9 +87,9 @@ O Visual Studio Code integra-se ao Azure Functions Core Tools para permitir que 
 
     ![Captura de tela mostrando a localização da etapa Executar agora...](./media/01/execute-function-local.png)
 
-1. Em **Inserir corpo da solicitação**, digite o valor do corpo da mensagem de solicitação de `{ "name": "Azure" }`. Pressione **Enter** para enviar essa mensagem de solicitação à função. Quando a função é executada localmente e retorna uma resposta, uma notificação é gerada no Visual Studio Code.
+1. Em **Insira o corpo da solicitação**, você verá o valor do corpo da mensagem de solicitação igual a `{ "name": "Azure" }`. Pressione **Enter** para enviar essa mensagem de solicitação à função. Quando a função é executada localmente e retorna uma resposta, uma notificação é gerada no Visual Studio Code.
 
-    selecione o ícone de sino de notificação para visualizar a notificação. As informações sobre a execução da função são mostradas no painel **Terminal**.
+    Selecione o ícone de sino de notificação para visualizar a notificação. As informações sobre a execução da função são mostradas no painel **Terminal**.
 
 1. Pressione **Shift + F5** a fim de parar o Core Tools e desconectar o depurador.
 
@@ -154,7 +160,7 @@ Nesta seção, você criará os recursos do Azure necessários para implantar se
 
     ![Captura de tela da opção Execute Function Now.](./media/01/execute-function-remote.png)
 
-1. Em **Insira o corpo da solicitação**, você verá o valor do corpo da mensagem de solicitação igual a `{ "name": "Azure" }`. Clique em ENTER para enviar essa mensagem de solicitação à função.
+1. Em **Insira o corpo da solicitação**, você verá o valor do corpo da mensagem de solicitação igual a `{ "name": "Azure" }`. Pressione **Enter** para enviar essa mensagem de solicitação à função.
 
 1. Quando a função é executada no Azure e retorna uma resposta, uma notificação é gerada no Visual Studio Code. selecione o ícone de sino de notificação para visualizar a notificação.
 

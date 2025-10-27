@@ -34,21 +34,22 @@ Nesta seção do exercício, você cria um grupo de recursos e uma conta de Arma
     az group create --location eastus2 --name myResourceGroup
     ```
 
-1. Crie algumas variáveis para os comandos da CLI usarem. Isso reduz a quantidade de digitação. Substitua **myLocation** pelo valor escolhido antes. O nome da APIM precisa ser um nome globalmente exclusivo, e o script a seguir gera uma cadeia de caracteres aleatória. Substitua **myEmail** por um endereço de email que você possa acessar.
+1. Crie algumas variáveis para os comandos da CLI usarem. Isso reduz a quantidade de digitação. Substitua **<myLocation>** pelo valor escolhido anteriormente. O nome da APIM precisa ser um nome globalmente exclusivo, e o script a seguir gera uma cadeia de caracteres aleatória. Substitua **<myEmail>** por um endereço de email que você pode acessar. Substitua **<myResourceGroup>** pelo valor escolhido anteriormente.
 
     ```bash
     myApiName=import-apim-$RANDOM
-    myLocation=myLocation
-    myEmail=myEmail
+    myLocation=<myLocation>
+    myEmail=<myEmail>
+    myResourceGroup=<myResourceGroup>
     ```
 
-1. Crie uma instância APIM. O comando **az apim create** é usado para criar a instância. Substitua **myResourceGroup** pelo valor escolhido antes.
+1. Crie uma instância APIM. O comando **az apim create** é usado para criar a instância. 
 
     ```bash
     az apim create -n $myApiName \
         --location $myLocation \
         --publisher-email $myEmail  \
-        --resource-group myResourceGroup \
+        --resource-group $myResourceGroup \
         --publisher-name Import-API-Exercise \
         --sku-name Consumption 
     ```
@@ -75,22 +76,10 @@ Esta seção mostra como importar e publicar uma API de back-end da especificaç
 
     | Configuração | Valor | Descrição |
     |--|--|--|
-    | **Especificação de OpenAPI** | `https://bigconference.azurewebsites.net/` | Faz referência ao serviço que implementa a API, as solicitações são encaminhadas para esse endereço. A maioria das informações necessárias no formulário é preenchida automaticamente depois que você insere esse valor. |
-    | **Esquema de URL** | Selecione **HTTPS**. | Define o nível de segurança do protocolo HTTP aceito pela API. |
+    | **Especificação de OpenAPI** | `https://petstore3.swagger.io/api/v3/openapi.json` | Faz referência ao serviço que implementa a API, as solicitações são encaminhadas para esse endereço. A maioria das informações necessárias no formulário é preenchida automaticamente depois que você insere esse valor. |
+    | **Esquema de URL** | Certifique-se de que **HTTPS** esteja selecionado. | Define o nível de segurança do protocolo HTTP aceito pela API. |
 
 1. Selecione **Criar**.
-
-## Definir as configurações da API
-
-A *Big Conference API* foi criada. Agora é hora de definir as configurações da API. 
-
-1. Selecione **Configurações** no menu.
-
-1. Insira `https://bigconference.azurewebsites.net/` o campo **URL do serviço Web**.
-
-1. Desmarque a caixa de seleção **Assinatura necessária**.
-
-1. Selecione **Salvar**.
 
 ## Testar a API
 
@@ -98,11 +87,13 @@ Agora que a API foi importada e configurada, é hora de testar a API.
 
 1. Selecione **Testar** na barra de menus. Isso exibirá todas as operações disponíveis na API.
 
-1. Pesquise e selecione a operação **Speakers_Get**. 
+1. Pesquise e selecione a operação **Localizar animais de estimação por status.** . 
 
 1. Selecione **Enviar**. Talvez seja necessário rolar para baixo na página para exibir a resposta HTTP.
 
     O back-end responde com **200 OK** e alguns dados.
+
+1. Se quiser experimentar resultados diferentes, você poderá selecionar um status**status** diferente na seção **Parâmetros do modelo**. Selecione a lista suspensa em **VALOR** e escolha um status diferente. Em seguida, selecione **Enviar** para ver os novos resultados.
 
 ## Limpar os recursos
 
